@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohal Project CIS 621</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>POP QUIZ!</h1>
+      
+    </header>
+    <section id="CounterEX">
+      
+      <h4>Score: {{numCorrect}}</h4>
+      <h4 v-once>Max Score: {{total}}</h4>
+      <h4>{{percent}}</h4>
+
+      <button class="button-54" role="button" v-on:click="clearscore">Press Twice to Clear All</button>
+
+
+      <h2>Easy Questions</h2>
+      
+      <label class="rightques"> Math: What is <br>  23 x 15? <br>  {{EMAC}}</label>
+      <!-- 345 -->
+      <label class="leftques"> English: Henry ______ tired  <br /> {{EEAC}} </label> <br />
+      <!-- is -->
+      <select id="EasyEnglish" class="leftans" v-model="EEA" >
+        <option>are</option>
+        <option>is</option>
+
+    </select>
+      <input class="rightans" id="EasyMath" type="number"  v-model="EMA"><br>
+      
+      <label class="rightques"> History: How many rules are written in the Code of Hammurabi? <br>{{EHAC}} </label>
+      <!-- 282 -->
+      <label class="leftques"> Science: What direction does gravity exert force? <br>{{ESAC}} </label> <br />
+      <!-- down -->
+      <select class="leftans"id="EasyScience" v-model="ESA" >
+        <option>up</option>
+        <option>down</option>
+        <option>left</option>
+        <option>right</option>
+    </select>
+      <input class="rightans" id="EasyHistory" type="number" v-model="EHA"><br>
+      <label class="rightBonus"> Bonus: In 1612, who became the first person to observe the planet Neptune?<br>{{EBAC}}</label>
+      <!--galileo  -->
+      <label class="leftques"> Art:The artist Kandinsky is considered the first for this type of art?<br>{{EAAC}}</label> <br />
+      <!-- abstract  -->
+      <input class="leftans" id="EasyArt" type="text" v-model="EAA">
+      <input class="rightans" id="EasyBonus" type="text" v-model="EBA"><br>
+      <hr class="dash">
+
+
+      <h2>Medium Questions</h2>
+
+      <label class="rightques"> Math: If the two lines are perpendicular with the slopes m1 and m2 then m1 ⋅ m2 =  <br />{{MMAC}}</label>
+      <!-- -1 -->
+      <label class="leftques"> English: What is the Antonym of the word Tedious?  <br /> {{MEAC}} </label> <br />
+      <!-- exciting -->
+      <select class="leftans"id="MedEnglish" v-model="MEA" >
+        <option>monotonous</option>
+        <option>exciting</option>
+        <option>mindless</option>
+        <option>unvarying</option>
+    </select>
+    
+      <input class="rightans" id="MedMath" type="number"  v-model="MMA"><br>
+      <label class="rightques"> History: Where did Albert Einstein live before moving to the United States? <br>{{MHAC}} </label>
+      <!-- germany -->
+      <label class="leftques"> Science: What pH number indicates a alkali substance: 1 or 13? <br>{{MSAC}} </label> <br />
+      <!--13  -->
+      <!--<input class="leftans" id="MedScience" type="number" v-model="MSA">-->
+      <select class="leftans"id="MedScience" v-model="MSA" >
+        <option>1</option>
+        <option>13</option>
+    </select>
+      <!--<fieldset id="group1"class="leftans" id="MedScience">
+        <input type="radio" value=1 v-model="MSA">1
+        <input type="radio" value=13 v-model="MSA" >13
+    </fieldset>-->
+      <input class="rightans" id="MedHistory" type="text" v-model="MHA"><br>
+      <label class="rightBonus"> Bonus: How many moons are currently orbiting Jupiter?<br>{{MBAC}}</label>
+      <!--80  -->
+      <label class="leftques"> Art: How many canvases of Marilyn Monroe make up the Andy Warhol piece ‘Shot Marilyns’?<br>{{MAAC}}</label> <br />
+      <!-- 4  -->
+      <input class="leftans" id="MedArt" type="number" v-model="MAA">
+      <input class="rightans" id="MedBonus" type="number" v-model="MBA"><br>
+      <hr class="dash">
+      
+      <h2>Hard Questions</h2>
+      <label class="rightques"> Math: Write in Stanard Form (4-5i)(23+11i)  <br />{{HMAC}}</label>
+      <!-- 103-16i -->
+      <label class="leftques">English: Enter the correct present prefect form for the sentance "The children __________ really hard for the play." <br /> {{HEAC}} </label> <br />
+      <!-- have worked  -->
+      <select class="leftans"id="HardEnglish" v-model="HEA" >
+        <option>has works</option>
+        <option>has worked</option>
+        <option>have worked</option>
+        <option>have works</option>
+    </select>
+    
+      <input class="rightans" id="HardMath" type="text"  v-model="HMA"><br>
+      <label class="rightques"> History: What year was the Vietnam Veterans Memorial dedicated in Washington, D.C.?<br>{{HHAC}} </label>
+      <!-- 1982 -->
+      <label class="leftques"> Science: What kind of observation uses numbers? <br>{{HSAC}} </label> <br />
+      <!-- quantitative -->
+      <input class="leftans" id="HardScience" type="text" v-model="HSA">
+      <select class="rightans"id="HardHistory" v-model="HHA" >
+      <option>1980</option>
+      <option>1981</option>
+      <option>1982</option>
+      <option>1983</option>
+    </select><br>
+
+      <label class="rightBonus"> Bonus: In 1612, who became the first person to observe the planet Neptune?<br>{{HBAC}}</label>
+      <!--galileo  -->
+      <label class="leftques"> Art:The famous painting, “Birth of Venus” by Botticelli, features a goddess floating in the ocean on what?<br>{{HAAC}}</label> <br />
+      <!-- seashell  -->
+      <input class="leftans" id="HardArt" type="text" v-model="HAA">
+      <input class="rightans" id="HardBonus" type="text" v-model="HBA"><br>
+
+    </section>
+  </body>
+</html>
